@@ -7,7 +7,7 @@ Mini BPE 是一个用 C++14 实现的字节级 BPE（Byte Pair Encoding，字节
 | 路径 | 用途 |
 | --- | --- |
 | `README.md` | 项目入口，说明文件结构、代码职责、运行方法和实测结果 |
-| [main.cpp](main.cpp) | C++ 核心实现，包含语料级训练、模型读写、编解码，以及早期教学模式 |
+| [main.cpp](main.cpp) | C++ 核心实现，包含语料级训练、模型读写、编解码，以及早期教学模式下形成的字节级分词器 |
 | [gpt2_tokenizer.py](gpt2_tokenizer.py) | GPT-2 对照入口。调用 `tiktoken`，从标准输入读取 UTF-8 文本，输出 token ID，词表缓存默认位于 `output/gpt2_tokenizer_cache/` |
 | [integrate_corpora.py](integrate_corpora.py) | 早期全量语料批处理脚本。调用 `output/mini_bpe_full`，分别处理 TinyStories 和 OpenWebText，用 `cmp` 验证往返并记录 SHA-256。依赖旧二进制和两套语料，报告字段采用早期三轮合并口径。当前 TinyStories 流程见下方命令 |
 | [Mini_BPE_Strcture.md](Mini_BPE_Strcture.md) | `main.cpp` 逐段精读，包含数据结构、命令分发、手工推演和边界条件 |
